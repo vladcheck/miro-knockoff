@@ -1,9 +1,9 @@
 import { CONFIG } from "@/shared/model/config";
 import createClient from "openapi-react-query";
 import createFetchClient from "openapi-fetch";
-import type { paths } from "./schema/generated";
+import type { ApiPaths } from "./schema";
 
-export const fetchClient = createFetchClient<paths>({
+export const fetchClient = createFetchClient<ApiPaths>({
   baseUrl: CONFIG.API_BASE_URL,
 });
 

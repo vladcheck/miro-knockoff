@@ -8,6 +8,8 @@
       "DOM"
     ],
     "types": [
+      "msw",
+      "openapi-msw",
       "vite/client",
       "vite-plus/test/globals",
       "vite-plus/test/browser-playwright",
