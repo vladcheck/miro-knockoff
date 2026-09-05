@@ -1,10 +1,11 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite-plus";
 import { playwright } from "vite-plus/test/browser-playwright";
+import tailwindcss from "@tailwindcss/vite";
 
 // oxlint-disable-next-line import/exports-last
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   fmt: {},
   lint: {
     plugins: ["import", "jsdoc", "jsx-a11y", "oxc", "react", "react-perf", "typescript", "vitest"],

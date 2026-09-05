@@ -1,3 +1,4 @@
+import "./index.css";
 import { Outlet, useLocation } from "react-router";
 import { AppHeader } from "@/features/header";
 import { Providers } from "./Providers";
@@ -10,7 +11,7 @@ export function App() {
 
   return (
     <Providers>
-      <div>
+      <div className="bg-gray-500">
         {!isAuthPage && <AppHeader />}
         <Outlet />
       </div>
