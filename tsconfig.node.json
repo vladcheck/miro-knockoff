@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "composite": true,
+    "types": [
+      "node",
+    ],
+    "noUncheckedIndexedAccess": true
+  },
+  "include": [
+    "plugins/**/*",
+    "./*.config.*"
+  ],
+}

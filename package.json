@@ -1,0 +1,50 @@
+{
+  "name": "allure-learning",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "api": "pnpm dlx --package=openapi-typescript@7.13.0 --package=typescript@5.x openapi-typescript ./src/shared/api/schema/main.yaml -o ./src/shared/api/schema/generated.d.ts",
+    "test:unit": "vitest run",
+    "test:screenshot": "storybook",
+    "test:e2e": "playwright",
+    "dev": "vp dev",
+    "build": "tsc && vp build",
+    "preview": "vp preview",
+    "allure:generate": "mkdir -p ./allure-results; allure generate --open"
+  },
+  "devDependencies": {
+    "@oxlint/plugins": "^1.81.0",
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.4.1",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.5",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitest/browser-playwright": "^4.1.11",
+    "allure": "^3.16.0",
+    "allure-js-commons": "^3.11.1",
+    "allure-playwright": "^3.11.1",
+    "allure-vitest": "^3.11.1",
+    "eslint": "^10.9.1",
+    "msw": "^2.15.0",
+    "openapi-typescript": "^7.13.0",
+    "typescript": "~7.0.2",
+    "vite": "catalog:",
+    "vite-plus": "catalog:"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.102.8",
+    "openapi-fetch": "^0.17.0",
+    "openapi-react-query": "^0.5.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "react-router": "^8.3.1"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "onFail": "download",
+      "version": "11.25.0"
+    }
+  }
+}

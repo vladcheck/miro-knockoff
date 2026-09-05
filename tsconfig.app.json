@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "target": "esnext",
+    "module": "esnext",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "types": [
+      "vite/client",
+      "vite-plus/test/globals",
+      "vite-plus/test/browser-playwright",
+      "@vitest/browser-playwright",
+      "@playwright/test",
+      "react",
+      "react-dom",
+      "react-router",
+      "allure-js-commons",
+      "openapi-fetch",
+      "openapi-react-query"
+    ],
+    "allowArbitraryExtensions": true,
+    "skipLibCheck": true,
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "emitDeclarationOnly": true,
+    "moduleDetection": "force",
+    "jsx": "preserve",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+    },
+  },
+  "include": [
+    "src/**/*",
+  ],
+}

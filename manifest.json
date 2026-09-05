@@ -1,0 +1,39 @@
+{
+  "name": "Miro Knockoff",
+  "start_url": ".",
+  "description": "",
+  "display": "minimal-ui",
+  "protocol_handlers": [],
+  "screenshots": [
+    {
+      "src": "",
+      "form_factor": "wide"
+    },
+    {
+      "src": "",
+      "form_factor": "narrow"
+    }
+  ],
+  "display_override": [
+    "minimal-ui"
+  ],
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "any"
+    }
+  ],
+  "categories": [
+    "productivity",
+    "utilities",
+    "management"
+  ],
+  "theme_color": "black",
+  "background_color": "white",
+  "short_name": "miro",
+  "lang": "ru-ru",
+  "launch_handler": {
+    "client_mode": "auto"
+  }
+}
