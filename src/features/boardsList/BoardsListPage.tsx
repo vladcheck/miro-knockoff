@@ -4,6 +4,10 @@ import { rqClient } from "@/shared/api/instance";
 import { CONFIG } from "@/shared/model/config";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRef } from "react";
+import { Card, CardFooter, CardHeader } from "@/shared/ui/kit/card";
+import { Button } from "@/shared/ui/kit/button";
+import { Input } from "@/shared/ui/kit/input";
+import { Label } from "@/shared/ui/kit/label";
 
 function BoardsListPage() {
   const formRef = useRef<HTMLFormElement>(null!);
@@ -22,7 +26,7 @@ function BoardsListPage() {
   });
 
   return (
-    <div>
+    <div className="container mx-auto p-4">
       <h1>Boards list {CONFIG.API_BASE_URL}</h1>
 
       <form
@@ -41,31 +45,38 @@ function BoardsListPage() {
         }}
       >
         <div>
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" minLength={1} maxLength={100} />
+          <Label htmlFor="name">Name</Label>
+          <Input type="text" name="name" id="name" minLength={1} maxLength={100} />
         </div>
-        <button type="submit" disabled={createBoardMutation.isPending}>
+        <Button type="submit" disabled={createBoardMutation.isPending}>
           Create board
-        </button>
+        </Button>
       </form>
 
-      <ul>
+      <div className="grid grid-cols-3 gap-4">
         {boardsQuery.data?.map((b) => (
-          <li key={b.id}>
-            <Link to={href(ROUTES.Board, { bid: b.id })}>{b.name}</Link>
-            <button
-              disabled={deleteBoardMutation.isPending}
-              onClick={() =>
-                deleteBoardMutation.mutate({
-                  params: { path: { bid: b.id } },
-                })
-              }
-            >
-              Delete
-            </button>
-          </li>
+          <Card key={b.id}>
+            <CardHeader>
+              <Button variant="link">
+                <Link to={href(ROUTES.Board, { bid: b.id })}>{b.name}</Link>
+              </Button>
+            </CardHeader>
+            <CardFooter>
+              <Button
+                variant="destructive"
+                disabled={deleteBoardMutation.isPending}
+                onClick={() =>
+                  deleteBoardMutation.mutate({
+                    params: { path: { bid: b.id } },
+                  })
+                }
+              >
+                Delete
+              </Button>
+            </CardFooter>
+          </Card>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

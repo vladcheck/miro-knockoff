@@ -11,7 +11,7 @@ export function App() {
 
   return (
     <Providers>
-      <div className="bg-gray-500">
+      <div>
         {!isAuthPage && <AppHeader />}
         <Outlet />
       </div>
