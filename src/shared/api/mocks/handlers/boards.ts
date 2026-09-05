@@ -7,7 +7,7 @@ const boards: ApiSchemas["Board"][] = [
   { id: "board-2", name: "Product Roadmap" },
 ];
 
-export const handlers = [
+export const boardsHandlers = [
   http.get("/boards", async () => {
     return HttpResponse.json(boards);
   }),
