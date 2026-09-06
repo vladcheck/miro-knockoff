@@ -143,6 +143,9 @@ importers:
       cn:
         specifier: ^0.2.5
         version: 0.2.5
+      create-gstore:
+        specifier: ^0.2.0
+        version: 0.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       jwt-decode:
         specifier: ^4.0.0
         version: 4.0.0
@@ -224,7 +227,7 @@ importers:
         version: 6.2.12
       msw:
         specifier: ^2.15.0
-        version: 2.15.0(@types/node@26.4.1)(typescript@7.0.2)
+        version: 2.15.0
       openapi-msw:
         specifier: ^2.0.0
         version: 2.0.0(msw@2.15.0(@types/node@26.4.1)(typescript@7.0.2))
@@ -2138,6 +2141,12 @@ packages:
   crc32-stream@7.0.1:
     resolution: {integrity: sha512-IBWsY8xznyQrcHn8h4bC8/4ErNke5elzgG8GcqF4RFPw6aHkWWRc7Tgw6upjaTX/CT/yQgqYENkxYsTYN+hW2g==}
     engines: {node: '>=18'}
+
+  create-gstore@0.2.0:
+    resolution: {integrity: sha512-uBBf/EMrZUBPaILlvsWHhBUPOaZwaxnj4+1JGY9o7zSakI8dS4bBFetBjm9OG8BcPJVNSiCUz28D+WNzpPuwdw==}
+    peerDependencies:
+      react: '>=17.0.0'
+      react-dom: '>=17.0.0'
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -6228,6 +6237,11 @@ snapshots:
     dependencies:
       crc-32: 1.2.2
       readable-stream: 4.7.0
+
+  create-gstore@0.2.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8):
+    dependencies:
+      react: 19.2.8
+      react-dom: 19.2.8(react@19.2.8)
 
   cross-spawn@7.0.6:
     dependencies:
