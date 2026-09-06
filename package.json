@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "api": "pnpm dlx --package=openapi-typescript@7.13.0 --package=typescript@5.x openapi-typescript ./src/shared/api/schema/main.yaml -o ./src/shared/api/schema/generated.d.ts",
+    "api:bundle": "pnpm --package=@redocly/cli dlx redocly bundle ./src/shared/api/schema/main.yaml -o bundle.yaml",
+    "api:gen": "pnpm dlx --package=openapi-typescript@7.13.0 --package=typescript@5.x openapi-typescript ./src/shared/api/schema/main.yaml -o ./src/shared/api/schema/generated.d.ts",
     "test:unit": "vitest run",
     "test:screenshot": "storybook",
     "test:e2e": "playwright",
