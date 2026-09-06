@@ -1,8 +1,9 @@
+import { enableMocking } from "@/shared/api/mocks/enableMocking";
 import { ROUTES } from "@/shared/model/routes";
 import { useSession } from "@/shared/model/session";
-import { Navigate, Outlet } from "react-router";
+import { Navigate, Outlet, redirect } from "react-router";
 
-export default function ProtectedRoute() {
+export function ProtectedRoute() {
   const { session } = useSession();
 
   if (!session) {
@@ -10,4 +11,15 @@ export default function ProtectedRoute() {
   }
 
   return <Outlet />;
+}
+
+export async function protectedLoader() {
+  await enableMocking();
+  const token = await useSession.getState().refreshToken();
+
+  if (!token) {
+    return redirect(ROUTES.Login);
+  }
+
+  return null;
 }

@@ -9,7 +9,7 @@ interface Session {
 
 const JWT_SECRET = new TextEncoder().encode("your-secret-key");
 const MAX_AGE = 604800;
-const ACCESS_TOKEN_EXPIRY = "3s";
+const ACCESS_TOKEN_EXPIRY = "10m";
 const REFRESH_TOKEN_EXPIRY = "7d";
 const PROTECTED_HEADER_PARAMS = { alg: "HS256" };
 

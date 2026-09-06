@@ -8,7 +8,7 @@ import {
 } from "@/shared/ui/kit/card";
 import type { ReactNode } from "react";
 
-export default function AuthLayout({
+export function AuthLayout({
   title,
   description,
   form,

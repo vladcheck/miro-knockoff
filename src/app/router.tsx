@@ -1,8 +1,8 @@
 import { createBrowserRouter, redirect } from "react-router";
 import { ROUTES } from "@/shared/model/routes";
 import { App } from "./App";
-import ProtectedRoute from "@/shared/model/ProtectedRoute";
-import AppHeader from "@/features/header/AppHeader";
+import { ProtectedRoute, protectedLoader } from "@/shared/model/ProtectedRoute";
+import { AppHeader } from "@/features/header/AppHeader";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +15,7 @@ export const router = createBrowserRouter([
             <ProtectedRoute />
           </>
         ),
+        loader: protectedLoader,
         children: [
           {
             path: ROUTES.Boards,

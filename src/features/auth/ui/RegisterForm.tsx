@@ -4,7 +4,7 @@ import { Input } from "@base-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-import useRegister from "../model/useRegister";
+import { useRegister } from "../model/useRegister";
 
 const formSchema = z
   .object({
@@ -20,7 +20,7 @@ const formSchema = z
     error: "Пароли не совпадают",
   });
 
-export default function RegisterForm() {
+export function RegisterForm() {
   const form = useForm({
     resolver: zodResolver(formSchema),
   });

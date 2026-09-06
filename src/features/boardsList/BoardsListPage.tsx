@@ -1,6 +1,6 @@
 import { href, Link } from "react-router";
 import { ROUTES } from "@/shared/model/routes";
-import { rqClient } from "@/shared/api/instance";
+import { publicRqClient } from "@/shared/api/instance";
 import { CONFIG } from "@/shared/model/config";
 import { useQueryClient } from "@tanstack/react-query";
 import { useRef } from "react";
@@ -12,16 +12,16 @@ import { Label } from "@/shared/ui/kit/label";
 function BoardsListPage() {
   const formRef = useRef<HTMLFormElement>(null!);
   const queryClient = useQueryClient();
-  const boardsQuery = rqClient.useQuery("get", "/boards");
+  const boardsQuery = publicRqClient.useQuery("get", "/boards");
 
-  const createBoardMutation = rqClient.useMutation("post", "/boards", {
+  const createBoardMutation = publicRqClient.useMutation("post", "/boards", {
     onSettled: async () => {
-      await queryClient.invalidateQueries(rqClient.queryOptions("get", "/boards"));
+      await queryClient.invalidateQueries(publicRqClient.queryOptions("get", "/boards"));
     },
   });
-  const deleteBoardMutation = rqClient.useMutation("delete", "/boards/{bid}", {
+  const deleteBoardMutation = publicRqClient.useMutation("delete", "/boards/{bid}", {
     onSettled: async () => {
-      await queryClient.invalidateQueries(rqClient.queryOptions("get", "/boards"));
+      await queryClient.invalidateQueries(publicRqClient.queryOptions("get", "/boards"));
     },
   });
 

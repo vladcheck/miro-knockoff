@@ -4,14 +4,14 @@ import { Input } from "@base-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
 import { z } from "zod";
-import useLogin from "../model/useLogin";
+import { useLogin } from "../model/useLogin";
 
 const formSchema = z.object({
   email: z.email("Почта обязательна"),
   password: z.string("Пароль обязателен"),
 });
 
-export default function LoginForm() {
+export function LoginForm() {
   const form = useForm({
     resolver: zodResolver(formSchema),
   });
