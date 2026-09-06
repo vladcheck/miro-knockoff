@@ -23,7 +23,8 @@
       "react-hook-form",
       "allure-js-commons",
       "openapi-fetch",
-      "openapi-react-query"
+      "openapi-react-query",
+      "jose"
     ],
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
