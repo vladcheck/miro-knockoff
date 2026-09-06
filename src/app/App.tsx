@@ -1,6 +1,6 @@
 import "./index.css";
 import { Outlet, useLocation } from "react-router";
-import { AppHeader } from "@/features/header";
+import AppHeader from "@/features/header/AppHeader";
 import { Providers } from "./Providers";
 import { ROUTES } from "@/shared/model/routes";
 
