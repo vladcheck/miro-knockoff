@@ -1,7 +1,6 @@
 import { http } from "../http";
 import type { ApiSchemas } from "../../schema";
-import { HttpResponse } from "msw";
-import { HydrationBoundary } from "@tanstack/react-query";
+import { delay, HttpResponse } from "msw";
 
 const mockUsers: ApiSchemas["User"][] = [
   { id: "1", email: "admin@gmail.com" },
@@ -49,6 +48,8 @@ export const authHandlers = [
     const body = await request.json();
     const user = mockUsers.find((u) => u.email === body.email);
     const storedPassword = userPasswords.get(body.email);
+
+    await delay(100);
 
     if (!user) {
       return HttpResponse.json(

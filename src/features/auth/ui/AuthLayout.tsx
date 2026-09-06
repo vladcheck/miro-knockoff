@@ -1,5 +1,3 @@
-import { ROUTES } from "@/shared/model/routes";
-import { Button } from "@/shared/ui/kit/button";
 import {
   Card,
   CardContent,
@@ -9,7 +7,6 @@ import {
   CardTitle,
 } from "@/shared/ui/kit/card";
 import type { ReactNode } from "react";
-import { Link } from "react-router";
 
 export default function AuthLayout({
   title,

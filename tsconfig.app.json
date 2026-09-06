@@ -15,6 +15,8 @@
       "vite-plus/test/browser-playwright",
       "@vitest/browser-playwright",
       "@playwright/test",
+      "zod",
+      "@hookform/resolvers",
       "react",
       "react-dom",
       "react-router",
