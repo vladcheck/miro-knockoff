@@ -10,6 +10,9 @@
   },
   "include": [
     "plugins/**/*",
-    "./*.config.*"
+    "*.config.*",
+    "playwright.config.ts",
+    "tailwind.config.ts",
+    "vite.config.ts"
   ],
 }
